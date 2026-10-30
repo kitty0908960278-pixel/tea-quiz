@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新芳春茶行｜尋找你的命定茶香心理測驗</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            background-color: #f7f5f0;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #2c4a3e;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            display: none;
+        }
+        .question-box.active {
+            display: block;
+        }
+        .question-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c4a3e;
+            margin-bottom: 20px;
+        }
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options-list li {
+            background: #fdfcfb;
+            border: 1px solid #e0dbd1;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .options-list li:hover {
+            background: #eef2ef;
+            border-color: #2c4a3e;
+        }
+        .result-box {
+            display: none;
+            text-align: center;
+        }
+        .result-box.active {
+            display: block;
+        }
+        .mascot-card {
+            background: #f7f5f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed #2c4a3e;
+        }
+        .mascot-avatar {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+        .mascot-avatar img {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            margin: 0 auto;
+        }
+        .mascot-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #b35928;
+            margin-bottom: 5px;
+        }
+        .result-title {
+            font-size: 22px;
+            color: #2c4a3e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .result-desc {
+            text-align: left;
+            background: #fdfcfb;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0dbd1;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+        .btn {
+            background-color: #2c4a3e;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #1e332a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>新芳春茶行｜尋找你的命定茶香</h1>
+    <div class="subtitle">大稻埕茶茶廚房：融合動物與茶香特徵的獨家IP角色（共 5 題）</div>
+
+    <!-- 題目 1 -->
+    <div id="q1" class="question-box active">
+        <div class="question-title">Q1. 週末午後，你更傾向用哪一種「氣味與氛圍」來開啟你的假期？</div>
+        <ul class="options-list">
+            <li onclick="answer('A')">A. 充滿大自然生命力的草本綠意，伴隨微微海苔與清新葉香。</li>
+            <li onclick="answer('B')">B. 像漫步山林間的清雅花香與淡果香，微風徐徐、毫無負擔。</li>
+            <li onclick="answer('C')">C. 帶有大自然奇妙韻味、層次豐富的天然蜜香與熟果香。</li>
+            <li onclick="answer('D')">D. 經過時間淬鍊、沉穩厚實的木質調與深邃焙火香。</li>
+            <li onclick="answer('E')">E. 濃郁奔放、帶有香料與甜感的肉桂、薄荷或水果甜香。</li>
+        </ul>
+    </div>
+
+    <!-- 題目 2 -->
+    <div id="q2" class="question-box">
+        <div class="question-title">Q2. 在人際關係或團體活動中，你通常扮演什麼樣的角色？</div>
+        <ul class="options-list">
+            <li onclick="answer('A')">A. 口感清鮮、層次直接，喜歡純粹、充滿活力與清爽的互動。</li>
+            <li onclick="answer('B')">B. 滋味清揚、順口百搭，能自然融入各種場合，給人舒服的感覺。</li>
+            <li onclick="answer('C')">C. 風格獨特、心思細膩，能察覺別人忽略的細節與美感。</li>
+            <li onclick="answer('D')">D. 醇厚深邃、經得起考驗，做事講求扎實與穩定。</li>
+            <li onclick="answer('E')">E. 濃郁厚實、富有熱情，勇於嘗試新事物並留下深刻印象。</li>
+        </ul>
+    </div>
+
+    <!-- 題目 3 -->
+    <div id="q3" class="question-box">
+        <div class="question-title">Q3. 當你感到壓力大、需要被療癒時，哪一種口感與溫度最能撫慰你？</div>
+        <ul class="options-list">
+            <li onclick="answer('A')">A. 冰涼或常溫的清爽甘鮮感，讓腦袋瞬間清醒。</li>
+            <li onclick="answer('B')">B. 溫潤輕盈的淡雅清香，沒有任何負擔，讓身心靈放鬆。</li>
+            <li onclick="answer('C')">C. 帶有一點天然甘甜與蜜果香的溫熱茶湯，需要慢慢啜飲。</li>
+            <li onclick="answer('D')">D. 溫熱且帶有厚實焙火麥香的茶湯，給予內心安全感。</li>
+            <li onclick="answer('E')">E. 濃郁溫厚的全發酵口感，充滿層次，讓感官全開。</li>
+        </ul>
+    </div>
+
+    <!-- 題目 4 -->
+    <div id="q4" class="question-box">
+        <div class="question-title">Q4. 面對生活中的突發挑戰或新任務時，你的第一直覺反應是？</div>
+        <ul class="options-list">
+            <li onclick="answer('A')">A. 行動派！立刻捲起袖子動手嘗試，喜歡快節奏地解決問題。</li>
+            <li onclick="answer('B')">B. 先聽聽大家的意見，以和為貴，找出大家都能接受的平衡點。</li>
+            <li onclick="answer('C')">C. 靜靜觀察其中的細節與美感，用獨特的視角去細緻處理。</li>
+            <li onclick="answer('D')">D. 按照既定步調與安全規範，一步一腳印踏實完成。</li>
+            <li onclick="answer('E')">E. 覺得非常興奮！迫不及待想嘗試完全沒接觸過的新方法。</li>
+        </ul>
+    </div>
+
+    <!-- 題目 5 -->
+    <div id="q5" class="question-box">
+        <div class="question-title">Q5. 如果要為自己選一個理想的週末旅行去處，你會選擇哪裡？</div>
+        <ul class="options-list">
+            <li onclick="answer('A')">A. 充滿陽光與海風的海岸線，大步奔跑揮灑活力。</li>
+            <li onclick="answer('B')">B. 寧靜舒適的文青咖啡廳或綠意盎然的公園散步。</li>
+            <li onclick="answer('C')">C. 充滿歷史韻味的老街巷弄或私房手作工坊，細細品味老時光。</li>
+            <li onclick="answer('D')">D. 莊嚴穩重的歷史古蹟或山林步道，感受大自然的沉穩力量。</li>
+            <li onclick="answer('E')">E. 充滿異國風情、藝術展覽或熱鬧市集的全新城市角落。</li>
+        </ul>
+    </div>
+
+    <!-- 結果頁面 -->
+    <div id="result" class="result-box">
+        <div id="resultTitle" class="result-title"></div>
+        <div class="mascot-card">
+            <div id="resultAvatar" class="mascot-avatar"></div>
+            <div id="resultTea" class="mascot-name"></div>
+        </div>
+        <div id="resultDesc" class="result-desc"></div>
+        <button class="btn" onclick="restart()">重新測驗</button>
+    </div>
+</div>
+
+<script>
+    let currentStep = 1;
+    let scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+
+    const resultsData = {
+        A: {
+            tea: "碧螺春茶",
+            avatar: '<img src="S__48717844.jpg" alt="綠茶葉小萌貓">',
+            name: "綠茶葉小萌貓",
+            desc: "<strong>氣味與口感：</strong>帶有鮮明的草菁香、清新自然的綠葉香氣與海苔般的甘草清香，口感清鮮。<br><br><strong>融合IP特色：</strong>外圍環繞著翠綠嫩葉與茶葉脈絡的小貓造型，身軀帶有清爽的草本綠意。你充滿活力、性格明朗且直率，喜歡直接、乾淨且充滿清爽感的節奏！"
+        },
+        B: {
+            tea: "條形包種茶 / 高山烏龍",
+            avatar: '<img src="S__48717845.jpg" alt="櫻花包種犬">',
+            name: "櫻花包種犬",
+            desc: "<strong>氣味與口感：</strong>散發清揚的花香（如清雅的桂花香、蘭花香）以及淡雅的果香，茶湯清香撲鼻、滋味清揚。<br><br><strong>融合IP特色：</strong>溫柔的小柴犬臉龐外圍完美綻放著雅緻的粉嫩花瓣（桂花/櫻花意象），散發清香。你隨和、溫柔且極具同理心，在團體中總是扮演著讓人感到舒服、無壓力的協調角色。"
+        },
+        C: {
+            tea: "鐵觀音 / 奇種烏龍",
+            avatar: '<img src="S__48717847.jpg" alt="炭焙茶香熊">',
+            name: "炭焙茶香熊",
+            desc: "<strong>氣味與口感：</strong>經過獨特的焙火工藝，帶有濃郁的熟果香、木質香、醇厚的焙火香（麥香或微焦糖香），氣味沉穩深邃。<br><br><strong>融合IP特色：</strong>身軀帶有炭焙焦糖色、頭頂裝飾著烘焙茶葉的厚實小熊。你做事條理分明、有責任感，追求穩定與高品質，給人滿滿的安全感。"
+        },
+        D: {
+            tea: "東方美人茶",
+            avatar: '<img src="S__48717846.jpg" alt="蜜香果實兔">',
+            name: "蜜香果實兔",
+            desc: "<strong>氣味與口感：</strong>因受到小綠葉蟬叮咬，會散發出獨特的天然熟果香與明顯的蜜香。<br><br><strong>融合IP特色：</strong>長著蜜蜂翅膀，頭頂頂著熟果蜜香果實的可愛小兔。你情感細膩、心思敏銳，擁有極高的美感與共情能力，內心世界如同東方美人茶般層次豐富。"
+        },
+        E: {
+            tea: "日月潭紅茶",
+            avatar: '<img src="S__48717848.jpg" alt="紅玉肉桂狐">',
+            name: "紅玉肉桂狐",
+            desc: "<strong>氣味與口感：</strong>具有特有的肉桂香、薄荷香（如台茶18號紅玉）或濃郁的水果甜香，氣味溫潤醇厚。<br><br><strong>融合IP特色：</strong>擁有紅褐色毛髮、雙耳與尾巴融入肉桂捲與薄荷葉線條的小狐狸。你充滿好奇心、喜歡探索未知，對藝術與新點子充滿熱情！"
+        }
+    };
+
+    function answer(choice) {
+        scores[choice]++;
+        document.getElementById(`q${currentStep}`).classList.remove('active');
+        currentStep++;
+
+        if (currentStep <= 5) {
+            document.getElementById(`q${currentStep}`).classList.add('active');
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        let maxKey = 'A';
+        let maxScore = -1;
+        for (let key in scores) {
+            if (scores[key] > maxScore) {
+                maxScore = scores[key];
+                maxKey = key;
+            }
+        }
+
+        document.getElementById('resultTitle').textContent = `🎉 ${resultsData[maxKey].tea} 🎉`;
+        document.getElementById('resultAvatar').innerHTML = resultsData[maxKey].avatar;
+        document.getElementById('resultTea').innerHTML = resultsData[maxKey].name;
+        document.getElementById('resultDesc').innerHTML = resultsData[maxKey].desc;
+        document.getElementById('result').classList.add('active');
+    }
+
+    function restart() {
+        currentStep = 1;
+        scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+        document.getElementById('result').classList.remove('active');
+        document.getElementById('q1').classList.add('active');
+    }
+</script>
+
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "z5pq1n70hx");
+</script>
+</body>
+</html>
